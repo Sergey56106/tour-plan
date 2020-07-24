@@ -43,11 +43,15 @@
         height: 1px
         background-color: $text-color
   .stars
-    flex-basis: 50%
+    flex-basis: auto
   .hotel
+    &-name
+      flex-basis: 100%
     &-wrapper
       justify-content: space-between
     &-info
+      &__name
+        margin-top: 10px
       &__rating
         display: none
       &__offer
