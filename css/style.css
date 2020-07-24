@@ -693,6 +693,9 @@ template {
         -ms-flex-pack: justify;
             justify-content: space-between;
   }
+  .hotel-info__text {
+    width: 100%;
+  }
   .hotel-info__name {
     margin-top: 10px;
   }
