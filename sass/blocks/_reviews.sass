@@ -10,6 +10,7 @@
     margin-bottom: 70px
     padding-top: 40px
   &-slider
+    &__button--next
     &__item
       position: relative
       display: flex
@@ -21,24 +22,25 @@
       border-radius: 8px
       margin-top: 45px
       padding: 0 62px 30px
-      &:before
+      &::before
         content: ''
         position: absolute
         left: 62px
         top: 13px
         width: 70px
         height: 47px
-        background-image: url(..img/quote-left.svg)
+        background-image: url(../img/quote-left.svg)
         background-repeat: no-repeat
-      &:arter
+      &::after
         content: ''
         position: absolute
         right: 62px
         top: 118px
         width: 70px
         height: 47px
-        background-image: url(..img/quote-right.svg)
+        background-image: url('../img/quote-right.svg')
         background-repeat: no-repeat
+        z-index: 10
     &__button
       position: absolute
       top: 50%
@@ -60,7 +62,7 @@
         right: 0
     &__profile
       display: flex
-      font-display: column
+      flex-direction: column
       align-items: center
       margin-top: -45px
       margin-bottom: 30px
@@ -77,8 +79,6 @@
       line-height: 15px
       color: $primary
       margin-bottom: 10px
-      transform: transate(-50%,0)
-      margin-left: -65px
     &__date 
       display: flex
       align-items: center

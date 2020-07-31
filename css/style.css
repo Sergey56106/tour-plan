@@ -654,13 +654,13 @@ template {
 
 .hotel-slider__button--next {
   right: 18px;
-  background-image: url(../img/arrow-next.svg);
+  background-image: url("../img/arrow-next.svg");
   outline: none;
 }
 
 .hotel-slider__button--prev {
   left: 18px;
-  background-image: url(../img/arrow-prev.svg);
+  background-image: url("../img/arrow-prev.svg");
   outline: none;
 }
 
@@ -854,7 +854,6 @@ iframe {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  height: 260px;
 }
 
 .newsletter:before {
@@ -865,7 +864,7 @@ iframe {
   right: 0;
   bottom: 0;
   width: 100%;
-  height: 260px;
+  height: 100%;
   background-color: rgba(10, 34, 61, 0.8);
 }
 
@@ -885,13 +884,6 @@ iframe {
 }
 
 .newsletter-title {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   color: #fff;
   font-style: normal;
   font-weight: 300;
@@ -935,6 +927,7 @@ iframe {
   border: none;
   background-color: #EC1F46;
   color: #fff;
+  cursor: pointer;
 }
 
 .reviews {
@@ -972,26 +965,27 @@ iframe {
   padding: 0 62px 30px;
 }
 
-.reviews-slider__item:before {
+.reviews-slider__item::before {
   content: '';
   position: absolute;
   left: 62px;
   top: 13px;
   width: 70px;
   height: 47px;
-  background-image: url(..img/quote-left.svg);
+  background-image: url(../img/quote-left.svg);
   background-repeat: no-repeat;
 }
 
-.reviews-slider__item:arter {
+.reviews-slider__item::after {
   content: '';
   position: absolute;
   right: 62px;
   top: 118px;
   width: 70px;
   height: 47px;
-  background-image: url(..img/quote-right.svg);
+  background-image: url("../img/quote-right.svg");
   background-repeat: no-repeat;
+  z-index: 10;
 }
 
 .reviews-slider__button {
@@ -1024,7 +1018,10 @@ iframe {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  font-display: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -1048,9 +1045,6 @@ iframe {
   line-height: 15px;
   color: #EC1F46;
   margin-bottom: 10px;
-  -webkit-transform: transate(-50%, 0);
-          transform: transate(-50%, 0);
-  margin-left: -65px;
 }
 
 .reviews-slider__date {
@@ -1085,9 +1079,13 @@ iframe {
     -o-object-fit: cover;
        object-fit: cover;
   }
-}
-
-@media (max-width: 992px) {
+  .reviews__title {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
   .container,
   .newsletter-wrapper {
     max-width: 700px;
@@ -1227,6 +1225,22 @@ iframe {
   .map {
     width: 100%;
   }
+  .newsletter__title {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-left: 20px;
+  }
+  .newsletter__title__subscribe {
+    position: relative;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
   .newsletter-wrapper {
     max-width: 576px;
     widht: 92%;
@@ -1238,23 +1252,27 @@ iframe {
         -ms-flex-align: start;
             align-items: flex-start;
   }
-  .reviews-lider__item {
+  .reviews-slider__profile {
+    display: block;
+    width: 55%;
+  }
+  .reviews-slider__item {
     max-widht: 580px;
   }
-  .reviews-lider__item::before, .reviews-lider__item:after {
+  .reviews-slider__item::before, .reviews-slider__item:after {
     display: none;
   }
-  .reviews-lider__button {
+  .reviews-slider__button {
     top: 32px;
   }
-  .reviews-lider__button--prev {
-    left: 50%;
+  .reviews-slider__button--prev {
+    left: 30%;
     margin-left: -65px;
     -webkit-transform: translate(-50%, 0);
             transform: translate(-50%, 0);
   }
-  .reviews-lider__button--next {
-    right: 50%;
+  .reviews-slider__button--next {
+    right: 10%;
     margin-left: -65px;
     -webkit-transform: translate(-50%, 0);
             transform: translate(-50%, 0);
@@ -1283,10 +1301,24 @@ iframe {
     padding: 76px 0 83px 0;
   }
   .newsletter__title {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     margin-bottom: 37px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
   .subscribe {
     width: 100%;
+  }
+  .subscribe__input {
+    padding: 102px 34px;
+  }
+  .reviews-slider__profile {
+    display: block;
+    width: 38%;
   }
 }
 /*# sourceMappingURL=style.css.map */
