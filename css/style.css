@@ -1347,6 +1347,50 @@ iframe {
   color: #BDBDBD;
 }
 
+.footer__banners {
+  margin-top: 93px;
+}
+
+.banners {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(min-content, 1fr))[4];
+      grid-template-columns: repeat(4, minmax(-webkit-min-content, 1fr));
+      grid-template-columns: repeat(4, minmax(min-content, 1fr));
+}
+
+.banners__list {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-column: 2 / 4;
+  margin: auto;
+  padding: 0;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.banners__item {
+  margin: 0 6px;
+  color: #FFFFFF;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 15px;
+}
+
+.banners__link {
+  color: inherit;
+}
+
+.banners__image {
+  margin-left: auto;
+}
+
 @media (max-width: 1200px) {
   .container {
     max-width: 960px;
